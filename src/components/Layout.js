@@ -7,6 +7,7 @@ import "../assets/css/main.css"
 const Layout = ({ children }) => {
   return <>
   <Navbar/>
+  <Sidebar />
   {children}
   <Footer />
   </>
