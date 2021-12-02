@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <footer>
       <div>
-        <div className="footer-links social-links">
+        <div className="footer-links social-link">
           {socialLinks.map(link => {
             const { url, icon, id } = link
             return (
