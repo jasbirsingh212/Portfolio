@@ -7,9 +7,10 @@ const About = ({data}) => {
   const {strapiAbout: { title, description, stack, image }} = data;
   return (
     <>
+    <Seo title="About me" />
       <section className='about-page'>
         <div className='section-center about-center'>
-          <img src={image?.localFile?.publicURL} className='about-img-svg' />
+          <img src={image?.localFile?.publicURL} className='about-img-svg' alt='about me' />
           <article className='about-text'>
             <Title title={title}/>
             <p>{description}</p>

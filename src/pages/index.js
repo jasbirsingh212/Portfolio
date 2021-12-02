@@ -8,12 +8,15 @@ import Seo from "../components/Seo"
 const IndexPage = ({data}) => {
   const {allStrapiProjects: { nodes: projects}} = data
   return (
+    <>
+    <Seo title='Home' />
     <main>
       <Hero/>
       <Services/>
       <Jobs />
       <Projects title='featured projects' showLink={true} projects={projects} />
     </main>
+    </>
   )
 }
 export const query = graphql`

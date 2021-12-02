@@ -3,7 +3,7 @@ import links from "../constants/links"
 import socialLinks from "../constants/social_links"
 import { Link } from "gatsby"
 import { FaTimes } from "react-icons/fa"
-const Sidebar = ({ isOpen = true, toggleSidebar }) => {
+const Sidebar = ({ isOpen, toggleSidebar }) => {
   return (
     <aside className={isOpen ? "sidebar show-sidebar" : "sidebar"}>
       <button className="close-btn" type="button" onClick={toggleSidebar}>

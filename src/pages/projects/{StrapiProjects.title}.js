@@ -1,11 +1,12 @@
 import React from 'react';
 import {graphql} from 'gatsby';
+import Seo from '../../components/Seo';
 
 const ProjectTemplate = ({pageContext: {title}, data}) => {
-    console.log(data)
-    const {strapiProjects: { description}} = data;
+    const {strapiProjects: { description, image}} = data;
     return (
         <>
+        <Seo title={title} description={description} image={image?.localFile?.publicURL} />
             <main className='project-template-page'>
                 <h2>{title}</h2>
                 <p>{description}</p>
