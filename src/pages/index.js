@@ -19,7 +19,7 @@ const IndexPage = ({data}) => {
 export const query = graphql`
   {
     allStrapiProjects {
-      nodes {
+      nodes{
         description
         featured
         github

@@ -4,7 +4,6 @@ import { FaGithubSquare, FaShareSquare } from "react-icons/fa"
 import { Link } from "gatsby"
 
 const Project = ({ title, image, index, slug, description, stack, github, link }) => {
-  console.log(image)
   return (
     <article className="project">
       <GatsbyImage
