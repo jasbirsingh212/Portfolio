@@ -11,11 +11,6 @@ Variables
 ===============
 */
 
-body{
-  background: #222 !important;
-  color: #2caeba !important;
-}
-
 :root {
   /* dark shades of primary color*/
   --clr-primary-1: hsl(184, 91%, 17%);
