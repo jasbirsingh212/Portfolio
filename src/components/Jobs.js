@@ -6,7 +6,7 @@ import { Link } from "gatsby"
 
 const query = graphql`
   {
-    allStrapiJobs {
+    allStrapiJobs(sort: {fields: published_at, order: DESC}) {
       nodes {
         company
         position
@@ -27,6 +27,7 @@ const Jobs = () => {
   } = data
   const [value, setValue] = useState(0)
   const { company, position, date, description } = jobs[value]
+
   return (
     <section className="section jobs">
       <Title title="expierence" />
