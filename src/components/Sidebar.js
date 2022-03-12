@@ -14,7 +14,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
           {links.map(link => {
             const { id, url, text } = link
             return (
-              <li key={id} onClick={toggleSidebar}>
+              <li key={id} onClick={toggleSidebar} onKeyDown={toggleSidebar} role='presentation'>
                 <Link to={url}>{text}</Link>
               </li>
             )
