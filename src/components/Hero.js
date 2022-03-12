@@ -20,7 +20,7 @@ const Hero = () => {
               {socialLinks.map(link => {
                 const { id, url, icon } = link
                 return (
-                  <a href={url} key={id} className="social-link">
+                  <a href={url} key={id} className="social-link" target="_blank">
                     {icon}
                   </a>
                 )
