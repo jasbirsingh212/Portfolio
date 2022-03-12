@@ -9,6 +9,9 @@ require("dotenv").config({
 
 module.exports = {
   /* Your site config here */
+  flags: {
+    DEV_SSR: false,
+  },
   siteMetadata: {
       title: `Jasbir Singh Portfolio`,
       description: `Portfolio build with Gatsby`,
