@@ -3,6 +3,8 @@ import { Link } from "gatsby"
 import socialLinks from "../constants/social_links"
 // import heroImg from "../assets/images/hero.svg"
 import { StaticImage } from "gatsby-plugin-image"
+import Typewriter from 'typewriter-effect';
+import ReactTooltip from 'react-tooltip';
 
 const Hero = () => {
   return (
@@ -12,15 +14,31 @@ const Hero = () => {
           <div>
             <div className="underline"></div>
             <h1>i'm Jasbir Singh</h1>
-            <h4>Frontend and Fullstack Developer</h4>
+            <h4>
+              <Typewriter
+                options={{
+                  strings: ["Frontend and Fullstack Developer"],
+                  autoStart: true,
+                  loop: true,
+                }}
+              />
+            </h4>
             <Link to="/contact" className="btn">
               contact me
             </Link>
             <div className="social-links">
+            <ReactTooltip place="bottom" effect="solid" />
               {socialLinks.map(link => {
-                const { id, url, icon } = link
+                const { id, url, icon, name } = link
                 return (
-                  <a href={url} key={id} className="social-link" target="_blank" rel="noreferrer">
+                  <a
+                    href={url}
+                    key={id}
+                    className="social-link"
+                    target="_blank"
+                    rel="noreferrer"
+                    data-tip={name}
+                  >
                     {icon}
                   </a>
                 )
