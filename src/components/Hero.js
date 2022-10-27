@@ -4,7 +4,7 @@ import socialLinks from "../constants/social_links"
 // import heroImg from "../assets/images/hero.svg"
 import { StaticImage } from "gatsby-plugin-image"
 import Typewriter from 'typewriter-effect';
-import ReactTooltip from 'react-tooltip';
+
 
 const Hero = () => {
   return (
@@ -27,9 +27,9 @@ const Hero = () => {
               contact me
             </Link>
             <div className="social-links">
-            <ReactTooltip place="bottom" effect="solid" />
+               
               {socialLinks.map(link => {
-                const { id, url, icon, name } = link
+                const { id, url, icon } = link
                 return (
                   <a
                     href={url}
@@ -37,7 +37,6 @@ const Hero = () => {
                     className="social-link"
                     target="_blank"
                     rel="noreferrer"
-                    data-tip={name}
                   >
                     {icon}
                   </a>

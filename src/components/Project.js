@@ -2,7 +2,7 @@ import React from "react"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { FaGithubSquare, FaShareSquare } from "react-icons/fa"
 import { Link } from "gatsby";
-import ReactTooltip from 'react-tooltip';
+
 
 const Project = ({ title, image, index, slug, description, stack, github, link }) => {
   return (
@@ -26,13 +26,12 @@ const Project = ({ title, image, index, slug, description, stack, github, link }
           })}
         </div>
         <div className='project-links'>
-          <ReactTooltip place="bottom" effect="solid" />
-          <a href={github} data-tip="GitHub Repo" >
+          <a href={github}  >
             <FaGithubSquare className='project-icon'>
 
             </FaGithubSquare>
           </a>
-          <Link to={link} data-tip="Deployed Link" >
+          <Link to={link} >
             <FaShareSquare className='project-icon'>
             </FaShareSquare>
           </Link>
