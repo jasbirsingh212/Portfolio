@@ -6,7 +6,6 @@ import { StaticImage } from "gatsby-plugin-image"
 import Typewriter from 'typewriter-effect';
 import ReactTooltip from 'react-tooltip';
 
-
 const Hero = () => {
   return (
     <header className="hero">
