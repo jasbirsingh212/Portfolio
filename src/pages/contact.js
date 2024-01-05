@@ -1,18 +1,28 @@
-import React, {useRef} from "react"
-import emailjs from '@emailjs/browser';
-import Seo from "../components/Seo";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import React, { useRef } from "react"
+import emailjs from "@emailjs/browser"
+import Seo from "../components/Seo"
+import { ToastContainer, toast } from "react-toastify"
+import "react-toastify/dist/ReactToastify.css"
+;(function () {
+  emailjs.init(process.env.EMAIL_TOKEN)
+})()
 
 const Contact = () => {
-  const form = useRef();
+  const form = useRef()
 
-  const sendEmail = (e) => {
-    e.preventDefault(); // prevents the page from reloading when you hit “Send”
-    emailjs.sendForm(process.env.SERVICE_TOKEN, process.env.TEMPLATE_TOKEN, form.current, process.env.EMAIL_TOKEN)
-      .then((result) => {
+  const sendEmail = e => {
+    e.preventDefault() // prevents the page from reloading when you hit “Send”
+    emailjs
+      .sendForm(
+        process.env.SERVICE_TOKEN,
+        process.env.TEMPLATE_TOKEN,
+        form.current,
+        process.env.EMAIL_TOKEN
+      )
+      .then(
+        result => {
           // show the user a success message
-          toast.success('Submitted successfully. Thanks for connecting.', {
+          toast.success("Submitted successfully. Thanks for connecting.", {
             position: "bottom-right",
             autoClose: 5000,
             hideProgressBar: false,
@@ -21,11 +31,11 @@ const Contact = () => {
             draggable: true,
             progress: undefined,
             theme: "light",
-            });
-          
-      }, (error) => {
+          })
+        },
+        error => {
           // show the user an error
-          toast.error('Something went wrong, please try again!', {
+          toast.error("Something went wrong, please try again!", {
             position: "bottom-right",
             autoClose: 5000,
             hideProgressBar: false,
@@ -34,13 +44,14 @@ const Contact = () => {
             draggable: true,
             progress: undefined,
             theme: "light",
-            });
-      });
-  };
+          })
+        }
+      )
+  }
 
   return (
     <>
-    <Seo title="Contact" />
+      <Seo title="Contact" />
       <section className="contact-page">
         <article className="contact-form">
           <h3>get in touch</h3>
@@ -58,19 +69,21 @@ const Contact = () => {
                 placeholder="email"
                 className="form-control"
               />
-              <textarea name='message' placeholder='message' rows={10} className="form-control">
-              </textarea>
+              <textarea
+                name="message"
+                placeholder="message"
+                rows={10}
+                className="form-control"
+              ></textarea>
 
-              <button type='submit' className='btn submit-btn'>
+              <button type="submit" className="btn submit-btn">
                 submit
               </button>
             </div>
           </form>
         </article>
       </section>
-      <ToastContainer
-        limit={1}
-      />
+      <ToastContainer limit={1} />
     </>
   )
 }
