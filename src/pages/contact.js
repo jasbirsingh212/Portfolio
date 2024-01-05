@@ -4,7 +4,7 @@ import Seo from "../components/Seo"
 import { ToastContainer, toast } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
 ;(function () {
-  emailjs.init(process.env.EMAIL_TOKEN)
+  emailjs.init("cLeoeEJRP4iPdvE5D")
 })()
 
 const Contact = () => {
@@ -14,10 +14,10 @@ const Contact = () => {
     e.preventDefault() // prevents the page from reloading when you hit “Send”
     emailjs
       .sendForm(
-        process.env.SERVICE_TOKEN,
-        process.env.TEMPLATE_TOKEN,
+        "service_22u24pn",
+        "template_rx3seh8",
         form.current,
-        process.env.EMAIL_TOKEN
+        "cLeoeEJRP4iPdvE5D"
       )
       .then(
         result => {
