@@ -5,24 +5,31 @@ import Services from "../components/Services"
 import Jobs from "../components/Jobs"
 import Projects from "../components/Projects"
 import Seo from "../components/Seo"
-const IndexPage = ({data}) => {
-  const {allStrapiProjects: { nodes: projects}} = data
+const IndexPage = ({ data }) => {
+  const {
+    allStrapiProjects: { nodes: projects },
+  } = data
+  console.log(process.env.BACKEND_URL)
   return (
     <>
-    <Seo title='Home' />
-    <main>
-      <Hero/>
-      <Services/>
-      <Jobs />
-      <Projects title='featured projects' showLink={true} projects={projects} />
-    </main>
+      <Seo title="Home" />
+      <main>
+        <Hero />
+        <Services />
+        <Jobs />
+        <Projects
+          title="featured projects"
+          showLink={true}
+          projects={projects}
+        />
+      </main>
     </>
   )
 }
 export const query = graphql`
   {
     allStrapiProjects {
-      nodes{
+      nodes {
         description
         featured
         github
