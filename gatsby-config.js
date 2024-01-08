@@ -7,18 +7,20 @@ require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
 
+console.log(process.env.BACKEND_URL)
+
 module.exports = {
   /* Your site config here */
   flags: {
     DEV_SSR: false,
   },
   siteMetadata: {
-      title: `Jasbir Singh Portfolio`,
-      description: `Portfolio build with Gatsby`,
-      titleTemplate: `%s | Jasbir Singh Portfolio`,
-      url: `https://jasbir-singh-portfolio.netlify.app`,
-      twitterUsername: ``,
-      image: ``
+    title: `Jasbir Singh Portfolio`,
+    description: `Portfolio build with Gatsby`,
+    titleTemplate: `%s | Jasbir Singh Portfolio`,
+    url: `https://jasbir-singh-portfolio.netlify.app`,
+    twitterUsername: ``,
+    image: ``,
   },
   plugins: [
     `gatsby-plugin-image`,
